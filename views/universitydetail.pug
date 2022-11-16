@@ -1,0 +1,21 @@
+extends layout 
+ 
+block content 
+  h1(class = 'container-fluid p-5 bg-success text-warning text-center')= title 
+ 
+  if (toShow == null)
+    h2 No instance to Detail View 
+  else 
+    - let objectId = toShow._id
+    - let handwash_flavour  = toShow.handwash_flavour
+    - let handwash_cost = toShow.handwash_Name 
+    - let handwash_quantity = toShow.handwash_quantity 
+    div(class='justify-content-center p-2 text-center text-dark',style='background-color:#ccffff')
+      div.row 
+        div(class='p-2 flex-fill UniverrsityAttr mr-3') objectId : #{objectId}         
+      div.row 
+        div(class='p-2 flex-fill UniverrsityAttr mr-3') handwash_flavour : #{handwash_flavour}
+      div.row 
+        div(class='p-2 flex-fill UniverrsityAttr mr-3') handwash_cost   :  #{handwash_cost} 
+      div.row 
+        div(class='p-2 flex-fill UniverrsityAttr mr-3') handwash_quantity   : #{handwash_quantity} 

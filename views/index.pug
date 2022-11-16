@@ -2,17 +2,24 @@ extends layout
 
 block content
   h1= title
-  p Hello beautiful World!! #{title}
-  P Bindu
-  button(type="button", class="btn btn-secondary", onclick="doBump()") Press me
-  div(id="bump") 
-    i Bump the count
-  script. 
-    var count = 0;
-    var bump = 1;
+  p #{title} => An Intresting fact about me is, I am good at talking about same topic for hours.
+  - var btnType = 'info'
+  - var btnSize = 'lg'
+
+  button(type='button', class=`btn btn-${btnType} btn-${btnSize}` onclick = "doBump()") Press Me
+
+  div#bump Bump the count
+
+
+
+  script.
+    var count = 0
+    var bump = 1
     function doBump(){
-      count = count + bump;
-      bump = bump + 1;
-      document.getElementById("bump").innerHTML="Count "+count+" with bump "+bump;
+      count = count + bump
+      bump = bump + 1
+    document.getElementById("bump").innerHTML = " Count "+ count +" Bump "+bump;
     }
- 
+    
+
+    

@@ -2,14 +2,18 @@ extends layout
 
 block content
   h1= title
-  - let results=[{handwash_flavour:"Lime",handwash_cost:150,handwash_quantity:100},{handwash_flavour:"jasmine",handwash_cost:100,handwash_quantity:200},{handwash_flavour:"strawberry",handwash_cost:90,handwash_quantity:250}]
-  div(class="container-fluid")
-  div(class="row")
-   each value,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.handwash_flavour} liquid, cost #{value.handwash_cost}, quantity #{value.handwash_quantity}
-   script.
-    function buy(index)
-    {
-      alert(`Your purchased Item ${index+1}`)
+  - var results = results
+  div.container-fluid 
+    div.row 
+        each item, index in results
+            div.col-sm-2(onclick=`buy(${index})`) <br><br>_id: #{item["_id"]} <br>handwash_flavour : #{item["handwash_flavour"]} <br> handwash_cost: #{item["handwash_cost"]} <br> handwash_quantty: #{item["handwash_quantty"]} 
+
+  script.
+    function buy(index) {
+      alert("You purchased item " + index)
     }
- 
+
+  
+
+
+
